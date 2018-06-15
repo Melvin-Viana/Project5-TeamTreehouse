@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css?family=Lato");
+* {
+  font-family: "Lato", sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  color: black;
+}
+
+html,
+body {
+  height: 100%;
+  position: relative;
+}
+
+a:focus{
+  outline-color: black;
+
+}
+*:before,
+*:after {
+box-sizing: border-box;
+}
+
+.card {
+    display: flex;
+    margin: 0 auto;
+    max-width:900px;
+    justify-content: center;
+    width:30%;
+  }
+
+  .wrapper{
+      width:80%;
+      margin: 0 auto;
+  }
+  .row{
+      padding-bottom:1.5rem;
+  }
