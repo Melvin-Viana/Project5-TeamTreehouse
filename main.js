@@ -36,6 +36,12 @@ $.ajax({
 });
 
 $('#main').on('click','.user',(e)=>{
+    //Utilize this function to remove hidden class in modals
+    function showInModal(selector){
+        // Display the hidden items
+        $(`.popupInfo ${selector}`).removeClass('hidden');
+}
+
     var index;
     //If the user clicks the div place the index with a variable.
     e.target.tagName=='DIV'?
@@ -53,12 +59,13 @@ let html=$(`#${index}`).html();
 
 $('.popupInfo').html(html);
 //Display the modal window.
-$('.popupInfo .city').addClass('hidden');
-$('.popupInfo .username').removeClass('hidden');
-$('.popupInfo hr').removeClass('hidden');
-$('.popupInfo .cell').removeClass('hidden');
-$('.popupInfo .address').removeClass('hidden');
-$('.popupInfo .birthday').removeClass('hidden');
+showInModal('.username');
+showInModal('.city');
+showInModal('hr');
+showInModal('.cell');
+showInModal('.address');
+showInModal('.birthday');
+$('.popupInfo .city').addClass('hidden');//Hide city
 
 
 $('#myModal').css('display','block');
