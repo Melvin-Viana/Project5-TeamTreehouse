@@ -4,17 +4,18 @@ $(document).ready(()=>{
 $.ajax({
   // get 12 random employees from the random user api
   //Nationality - US / Inc - Includes: name,email, location,date of birth, Cell, Picture.
-  url: 'https://randomuser.me/api/?results=12&nat=us&inc=name,email,location,dob,cell,picture',
+  url: 'https://randomuser.me/api/?results=12&nat=us&inc=name,email,location,dob,cell,picture,login',
   dataType: 'json',
   success: function(data) {
     // for each user, add info to userInfo variable
     //Add ID to indicate the index of each user.
 	$.each(data.results, (i, user) => {
 		userInfo += `<div id="${i}"class="user">
-			<img src="${user.picture.medium}">
+			<img src="${user.picture.large}">
 			<ul>
 				<li class="name">${user.name.first} ${user.name.last}</li>
-				<li class="email">${user.email}</li>
+                <li class="username hidden">${user.login.username}</li>
+                <li class="email">${user.email}</li>
 				<li class="city">${user.location.city}</li>
 				<hr class="hidden">
 				<li class="cell hidden">${user.cell}</li>
@@ -35,20 +36,38 @@ $.ajax({
 });
 
 $('#main').on('click','.user',(e)=>{
-    if(e.target.tagName=='DIV'){
-var index = e.target.id;
-let imgLink = $(`#${index} img`).attr('src');
-let name=$(`#${index} .name`).html();
+    var index;
+    //If the user clicks the div place the index with a variable.
+    e.target.tagName=='DIV'?
+        //Place the id in index.
+        index=e.target.id:    
+        //Otherwise  
+        index=e.target.parentNode.parentNode.id;  
 
-    $('#myModal').css('display','block');
-}
-else{
-    return false;
-}
+
+
+//This variable will hold the html
+let html=$(`#${index}`).html();
+
+
+
+$('.popupInfo').html(html);
+//Display the modal window.
+$('.popupInfo .city').addClass('hidden');
+$('.popupInfo .username').removeClass('hidden');
+$('.popupInfo hr').removeClass('hidden');
+$('.popupInfo .cell').removeClass('hidden');
+$('.popupInfo .address').removeClass('hidden');
+$('.popupInfo .birthday').removeClass('hidden');
+
+
+$('#myModal').css('display','block');
+console.log($(`#${index}`).html());
 });
 
 $('span').on('click',()=>{
     $('#myModal').css('display','none');
+
 });
 
 
