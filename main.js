@@ -57,18 +57,29 @@ $(document).ready(() => {
       $(`.popupInfo ${selector}`).removeClass("hidden");
     }
 
-    var index;
+    let index;
+    let target;
     //If the user clicks the div place the index with a variable.
-    e.target.tagName == "DIV"
-      ? //Place the id in index.
-        (index = e.target.id)
-      : //Otherwise
-        (index = e.target.parentNode.parentNode.id);
+    if(e.target.tagName == "DIV")
+       //Place the id in index.
+      {  index = e.target.id;
+         target = e.target;
+      }
+    else if(e.target.tagName==="IMG"){
+         index=e.target.parentNode.id;
+         target = e.target.parentNode;
+    }  
+    else{ //Otherwise
+          index = e.target.parentNode.parentNode.id;
+          target= e.target.parentNode.parentNode;
+      }
+        
 
     //This variable will hold the html
-    let html = $(`#${index}`).html();
-
+    let html = target.innerHTML;
+    $(".popupInfo").attr('id',index);
     $(".popupInfo").html(html);
+    
     //Remove hidden class on these classes.
     showInModal(".username");
     showInModal(".city");
@@ -77,9 +88,9 @@ $(document).ready(() => {
     showInModal(".address");
     showInModal(".birthday");
     $(".popupInfo .city").addClass("hidden"); //Hide city
-    $('#myModal ul').attr('id',index);//Set id
     //Display whole modal
     $("#myModal").css("display", "block");
+    console.log();
   });
 
   //Hide modal form when "X" is clicked.

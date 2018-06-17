@@ -203,6 +203,6 @@ button{
 
 /* ICON CSS*/
 
-i:hover{
+#left:hover,#right:hover{
   cursor:pointer;/*Hover displays hand cursor */
 }
