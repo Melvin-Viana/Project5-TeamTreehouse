@@ -55,6 +55,16 @@ Unbinds DOMInserted event for .user divs.
     if(index === 0){
         $('#left').addClass('hidden');
         $('#right').addClass('m-auto');
+        $('#right').removeClass('hidden');
     }
-  });
+    else if(index===11){
+        $('#right').addClass('hidden');
+        $('#left').addClass('m-auto');    
+        $('#left').removeClass('hidden');}
+    else{
+        $('#left').removeClass('hidden');
+        $('#right').removeClass('hidden');
+        $('#left').addClass('mr-auto');
+    }    
+    });
 });
