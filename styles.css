@@ -104,6 +104,7 @@ li {
 }
 .user:hover {
   background: lightyellow;
+  cursor: pointer;
 }
 
 
@@ -182,8 +183,7 @@ li {
 
 /* The Close Button */
 .close {
-  color: #aaaaaa;
-  float: right;
+  color: black;
   font-size: 28px;
   font-weight: bold;
 }
@@ -193,4 +193,16 @@ li {
   color: #000;
   text-decoration: none;
   cursor: pointer;
+}
+
+/*Button CSS*/
+button{
+  margin-top:2em;
+  font-size:15px;
+}
+
+/* ICON CSS*/
+
+i:hover{
+  cursor:pointer;/*Hover displays hand cursor */
 }
