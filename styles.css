@@ -177,17 +177,14 @@ li {
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  text-align:center;
-  margin: 0 auto;
 }
 
 /* Modal Content */
 .modal-content {
   background-color: #fefefe;
-  margin: auto;
-  padding: 20px;
+  padding: 60px;
   border: 1px solid #888;
-  width: 30%;
+  width: 80%;
   border-radius:15px;
 }
 
@@ -216,4 +213,9 @@ button{
 #left:hover,#right:hover{
   cursor:pointer;/*Hover displays hand cursor */
   color:blue;
+}
+
+#arrows{
+  display:flex;
+  justify-content: space-between;
 }
