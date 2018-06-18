@@ -43,12 +43,14 @@ $(document).ready(()=>{
   function changeModal(index) {
     var html = $(`#main #${index}`).html();
     $(".popupInfo").attr("id", index);
-    $(".popupInfo").html(html);
+    $(".popupInfo").hide().fadeIn().html(html);
   }
 
   //============================================
-
+    //Click events:
+    
     //----------------------------------------------
+    //.user click event displays the arrows depending on index.
   $("#main").on("click", ".user", e => {
     //If the user clicks the div place the index with a variable.
     if (e.target.tagName == "DIV") {
@@ -63,7 +65,8 @@ $(document).ready(()=>{
     index = parseInt(index);
     toggleArrowDisplay(index);
   });
-  //================================================
+  //--------------------------------------------
+  //Displays next user on click
   $("#right").on("click", () => {
     index = index + 1;
     toggleArrowDisplay(index);
@@ -72,12 +75,15 @@ $(document).ready(()=>{
     displayModalInfo();
   });
 
-  //================================================
-  //================================================
+  //--------------------------------------------
+  //Displays previous user on click
   $("#left").on("click", () => {
     index = index - 1;
     toggleArrowDisplay(index);
     changeModal(index);
     displayModalInfo();
   });
+//================================================
+  
+
 });

@@ -50,6 +50,16 @@ table {
 
 /*===========RESET CSS==============*/
 
+@keyframes pulse {
+  0% {
+    color: black;
+  }
+ 
+  100% {
+    color: gray
+  }
+}
+
 /*------Styles.css--------*/
 
 #title {
@@ -205,4 +215,5 @@ button{
 
 #left:hover,#right:hover{
   cursor:pointer;/*Hover displays hand cursor */
+  color:blue;
 }

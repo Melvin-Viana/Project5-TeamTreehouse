@@ -1,4 +1,5 @@
 $(document).ready(() => {
+  let userInfo="";
     $.ajax({
       // get 12 random employees from the random user api
       //Nationality - US / Inc - Includes: name,email, location,date of birth, Cell, Picture, login object.
@@ -23,7 +24,7 @@ $(document).ready(() => {
           } ${user.location.postcode}</li>`;
           //format birthday
           const formatBday = () => {
-            let bday = user.dob.toString();
+            let bday = user.dob.date.toString();
             return (
               bday[5] +
               bday[6] +
