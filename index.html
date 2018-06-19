@@ -6,35 +6,42 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/solid.css" integrity="sha384-Rw5qeepMFvJVEZdSo1nDQD5B6wX0m7c5Z/pLNvjkB14W6Yki1hKbSEQaX9ffUbWe" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/regular.css" integrity="sha384-EWu6DiBz01XlR6XGsVuabDMbDN6RT8cwNoY+3tIH+6pUCfaNldJYJQfQlbEIWLyA" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/fontawesome.css" integrity="sha384-GVa9GOgVQgOk+TNYXu7S/InPTfSDTtBalSgkgqQ7sCik56N9ztlkoTr2f/T44oKV" crossorigin="anonymous">	
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-	<h1 id="title">Awesome Startup Employee Directory</h1>
-	<div id="main">
-    </ul>
-    <!-- The Modal -->
+  <h1 id="title">Awesome Startup Employee Directory</h1>
+  <div class="search"><input placeholder="Search directory">  <button id="search" type="button" class="btn btn-sm">
+    <span class="fa fa-search fa-sm" aria-hidden="true"></span> 
+  </button>
+  </div>  
+  
+
+   <!-- The Modal -->
 <div id="myModal" class="modal hidden">
 
-        <!-- Modal content -->
-        <div class="modal-content">
-          <span class=" ml-auto close">&times;</span>
-          <p class="popupInfo">Some text in the Modal..</p>
-           <div id="arrows"class="pt-5"> 
-             <span id="left"><i id="left" class=" fas fa-arrow-left"></i>Previous User</span>
-             
-              <span id ="right">Next User<i class="fas fa-arrow-right "></i></span>
-          </div>
-        </div>
-      
+    <!-- Modal content -->
+    <div class="modal-content d-flex">
+      <span class=" close align-self-end">&times;</span>
+      <p class="popupInfo d-flex align-items-center flex-column">Some text in the Modal..</p>
+       <div id="arrows"class="pt-2 align-items-end "> 
+         <button id="left" class="mr-auto btn btn-primary"><i class=" fas fa-arrow-left"></i>Previous User</button>
+         
+          <button id ="right" class="btn btn-primary" >Next User<i class="fas fa-arrow-right "></i></button>
+      </div>
+    </div>
+  
+  </div>
+	<div id="main">
+   
       </div>
       <script
       src="https://code.jquery.com/jquery-3.3.1.min.js"
       integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
       crossorigin="anonymous"></script>
-    <script src="ajax.js"></script> 
-    <script src="sort.js"></script>	
-    <script src="arrow.js"></script>	
-    <script src="main.js"></script> 
+    <script src="js/ajax.js"></script> 
+    <script src="js/filter.js"></script>	
+    <script src="js/arrow.js"></script>	
+    <script src="js/main.js"></script> 
 </body>
 </html>

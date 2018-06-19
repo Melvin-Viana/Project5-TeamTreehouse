@@ -1,6 +1,6 @@
-$(document).ready(()=>{
+$(document).ready(() => {
   //==========================================
- //-----------------FUNCTIONS-----------------
+  //-----------------FUNCTIONS-----------------
   //Remove hidden class
   function rmHidden(selector) {
     // Display the hidden items
@@ -14,22 +14,19 @@ $(document).ready(()=>{
   */
   function toggleArrowDisplay(index) {
     if (index === 0) {
-      $("#left").addClass("hidden");
-      $("#right").addClass("m-auto");
-      $("#right").removeClass("hidden");
+      $("#left").prop("disabled",true);
+      $("#right").prop("disabled",false);
     } else if (index === 11) {
-      $("#right").addClass("hidden");
-      $("#left").addClass("m-auto");
-      $("#left").removeClass("hidden");
+      $("#right").prop("disabled",true);
+      $("#left").prop("disabled",false);
     } else {
-      $("#left").removeClass("hidden");
-      $("#right").removeClass("hidden");
-      $("#left").addClass("mr-auto");
+      $("#left").prop("disabled",false);
+      $("#right").prop("disabled",false);
     }
   }
-//-----------------------------------------------
+  //-----------------------------------------------
   /*Removes hidden class from selected elements */
-  function displayModalInfo() {
+  function displayModalInfo(button) {
     rmHidden(".username");
     rmHidden(".city");
     rmHidden("hr");
@@ -38,19 +35,32 @@ $(document).ready(()=>{
     rmHidden(".birthday");
     $(".popupInfo .city").addClass("hidden"); //Hide city
   }
-//-----------------------------------------------
+  //-----------------------------------------------
   /* Sets the info within the modal */
-  function changeModal(index) {
-    var html = $(`#main #${index}`).html();
-    $(".popupInfo").attr("id", index);
-    $(".popupInfo").hide().fadeIn().html(html);
+  let html ="";
+
+  function changeModal(index) {    
+      html = $(`#main #${index}`).html();
+      $(".popupInfo").attr("id", index);
+      $(".popupInfo")
+      .html(html);
+      $('.modal-content').hide().fadeIn();
   }
 
+  //-------------------------------------------
+  //Click event for next/previous
+  function changeUser(next) {
+    next==="next"?index++:index=index-1;
+    toggleArrowDisplay(index);
+    toggleArrowDisplay(index);
+    changeModal(index);
+    displayModalInfo();
+  }
   //============================================
-    //Click events:
-    
-    //----------------------------------------------
-    //.user click event displays the arrows depending on index.
+  //Click events:
+
+  //----------------------------------------------
+  //.user click event displays the arrows depending on index.
   $("#main").on("click", ".user", e => {
     //If the user clicks the div place the index with a variable.
     if (e.target.tagName == "DIV") {
@@ -67,23 +77,16 @@ $(document).ready(()=>{
   });
   //--------------------------------------------
   //Displays next user on click
-  $("#right").on("click", () => {
-    index = index + 1;
-    toggleArrowDisplay(index);
-    toggleArrowDisplay(index);
-    changeModal(index);
-    displayModalInfo();
-  });
+  $("#right").unbind().on("click", (event)=>
+{   
+  event.stopPropagation();
+  changeUser('next');}
+  );
 
   //--------------------------------------------
   //Displays previous user on click
-  $("#left").on("click", () => {
-    index = index - 1;
-    toggleArrowDisplay(index);
-    changeModal(index);
-    displayModalInfo();
-  });
-//================================================
-  
+  $("#left").on("click",()=> changeUser('prev'));
 
+  $('#right').dblclick((e)=>{e.preventDefault();});
+  //================================================
 });

@@ -1,51 +1,132 @@
-@import url('https://fonts.googleapis.com/css?family=Lato');
+@import url("https://fonts.googleapis.com/css?family=Lato");
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /*===========RESET CSS==============*/
@@ -54,9 +135,9 @@ table {
   0% {
     color: black;
   }
- 
+
   100% {
-    color: gray
+    color: gray;
   }
 }
 
@@ -73,12 +154,12 @@ table {
 /* Make photos circular */
 img {
   border-radius: 50%;
-  margin-right:20px;
+  margin-right: 20px;
 }
 
 /* Text Styling */
 body {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
 }
 
 li {
@@ -89,7 +170,9 @@ li {
   text-align: center;
 }
 
-.name, .city, .address {
+.name,
+.city,
+.address {
   text-transform: capitalize;
 }
 
@@ -117,50 +200,42 @@ li {
   cursor: pointer;
 }
 
-
-
-
 /* Media Queries for Larger Screens */
 @media (min-width: 700px) {
-	#main {
-	  display: -webkit-flex; /* Safari */
-	  display: flex;
-	  flex-wrap: wrap;
-	  -webkit-justify-content: center; /* Safari */
-	  justify-content: center;
-	  max-width: 90%;
-	  margin: 0 auto;
-	} 
-	
-	.user {
-	  display: flex;
-	  align-items: center;
-	  width: 390px;
-	  margin-right: 1%;
-	  margin-left: 1%;
-	
-	}
-	
-	.user img {
+  #main {
+    display: -webkit-flex; /* Safari */
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-justify-content: center; /* Safari */
+    justify-content: center;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .user {
+    display: flex;
+    align-items: center;
+    width: 390px;
+    margin-right: 1%;
+    margin-left: 1%;
+  }
+
+  .user img {
     align-self: flex-start;
-	}
+  }
 
-	.user ul {
+  .user ul {
     flex-direction: column;
-	}
-	
-	.user li {
-	 text-align: left;
-	}
+  }
 
+  .user li {
+    text-align: left;
+  }
 }
-
-
-
 
 /* Hide additional user info */
 .hidden {
-	display: none;
+  display: none;
 }
 
 /*----Modal CSS used from: https://www.w3schools.com/howto/howto_css_modals.asp */
@@ -175,17 +250,19 @@ li {
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  margin: 0 auto;
 }
 
 /* Modal Content */
 .modal-content {
   background-color: #fefefe;
+  margin: auto;
   padding: 60px;
   border: 1px solid #888;
-  width: 80%;
-  border-radius:15px;
+  width: 400px;
+  border-radius: 15px;
 }
 
 /* The Close Button */
@@ -193,6 +270,8 @@ li {
   color: black;
   font-size: 28px;
   font-weight: bold;
+  margin-right: -50px;
+  margin-top: -50px;
 }
 
 .close:hover,
@@ -203,19 +282,49 @@ li {
 }
 
 /*Button CSS*/
-button{
-  margin-top:2em;
-  font-size:15px;
+button {
+  margin-top: 2em;
+  font-size: 15px;
 }
 
 /* ICON CSS*/
 
-#left:hover,#right:hover{
-  cursor:pointer;/*Hover displays hand cursor */
-  color:blue;
+#left[disabled="false"]:hover,
+#right[disabled="false"]:hover {
+  cursor: pointer; /*Hover displays hand cursor */
+  color: blue;
 }
 
-#arrows{
-  display:flex;
-  justify-content: space-between;
+#arrows {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin:0 auto;
+}
+
+.search i:hover {
+  cursor: pointer;
+  color: blue;
+}
+.search button{
+  margin-top:0px;
+  height:25px;
+}
+button:hover{
+  background-color:lightgoldenrodyellow;
+}
+input{
+  border:lightgray solid 1px;
+}
+input:focus{
+  outline:0 none;
+  border-color: gray;
+  box-shadow: rgb(243, 243, 77) inset, 0 0 8px rgb(241, 241, 97);
+ 
+
 }
