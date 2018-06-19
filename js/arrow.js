@@ -89,4 +89,7 @@ $(document).ready(() => {
 
   $('#right').dblclick((e)=>{e.preventDefault();});
   //================================================
+
+  $('#myModal').on('click',()=>$('#myModal').hide());//Hides modal when click outside modal
+
 });
